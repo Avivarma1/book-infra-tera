@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "db_subnets" {
-  name = "db-subnet-group"
+  name = "app-db-subnet-group"
 
   subnet_ids = [
     var.private_subnet_1_id,
@@ -8,6 +8,7 @@ resource "aws_db_subnet_group" "db_subnets" {
 }
 
 resource "aws_db_instance" "postgres" {
+  identifier     = "app-postgres-db"
   engine         = "postgres"
   engine_version = "17.6"
   instance_class = "db.t3.micro"
