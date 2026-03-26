@@ -19,7 +19,7 @@ module "ec2" {
   alb_sg_id           = module.vpc.alb_sg_id
   ec2_sg_id           = module.vpc.ec2_sg_id
   instance_type       = var.instance_type
-  existing_s3_bucket  = data.aws_s3_bucket.existing_bucket.id
+  existing_s3_bucket  = var.existing_s3_bucket
 }
 
 module "rds" {

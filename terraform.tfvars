@@ -1,4 +1,4 @@
-region = "us-east-2"
+region = "us-east-1"
 
 vpc_cidr = "10.0.0.0/16"
 
@@ -10,4 +10,7 @@ private_subnet_2 = "10.0.4.0/24"
 
 instance_type = "t3.micro"
 
-existing_s3_bucket = "kopama-nipina"
+existing_s3_bucket = "avinash-bookworm-new"
+
+db_username = "avinash_p7202"
+db_password = "replace_me_1234"

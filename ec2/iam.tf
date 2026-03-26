@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ec2_role" {
-  name = "app-ec2-ssm-role"
+  name = "app-ec2-ssm-role-v2"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -19,7 +19,7 @@ resource "aws_iam_role_policy_attachment" "ssm" {
 }
 
 resource "aws_iam_role_policy" "s3_access" {
-  name = "app-s3-access-policy"
+  name = "app-s3-access-policy-v2"
   role = aws_iam_role.ec2_role.id
 
   policy = jsonencode({
@@ -42,6 +42,6 @@ resource "aws_iam_role_policy" "s3_access" {
 }
 
 resource "aws_iam_instance_profile" "profile" {
-  name = "app-ec2-instance-profile"
+  name = "app-ec2-instance-profile-v2"
   role = aws_iam_role.ec2_role.name
 }

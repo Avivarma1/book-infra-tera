@@ -6,6 +6,11 @@ data "aws_ami" "amazon_linux" {
     name   = "name"
     values = ["amzn2-ami-hvm*"]
   }
+
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
 }
 
 resource "aws_instance" "app" {
